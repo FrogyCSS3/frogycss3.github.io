@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🐸 FrogyCSS 3: The Shlappy Strikes Back (MDL Revival)</title>
+    
+    <!-- 1. Підключення шрифтів Material Design (MDL) та Inter -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,400,500,700&display=swap">
+    
+    <!-- 2. Підключення Material Design Lite (MDL) - База -->
+    <!-- ВИКОРИСТОВУЄМО ЗЕЛЕНО-ЖОВТИЙ АКЦЕНТ MDL з офіційного джерела code.getmdl.io -->
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.green-yellow.min.css">
+    
+    <style>
+        /* ================================================= */
+        /* 🐸 FrogyCSS V.3: MDL-Хаос Стилі (ІНТЕГРОВАНО) */
+        /* ================================================= */
+        
+        :root {
+            /* Змінні Хаосу, як у SCSS: abstracts/_variables.scss */
+            /* PRIMARY змінено на Teal/Бірюзовий, щоб уникнути конфлікту з MDL Green */
+            --frogy-primary-color: #008080; /* Темний Бірюзовий/Зелений (Teal) */
+            --frogy-primary-hover: #00AAAA; /* Світліший Бірюзовий/Зелений */ 
+            --frogy-text-color: #FFFFFF;
+            --frogy-accent-color: #FFD700; /* Золотий для Біляшів (Залишаємо) */
+            --frogy-background: #0d0d0d;
+            --bobrik-shadow: 0 10px 20px rgba(0, 128, 128, 0.4); /* Тінь під новий колір */
+            --transition-speed: 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+
+        /* Стилізація BODY для MDL-Layout */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--frogy-background);
+            color: #ccc; /* Базовий світлий текст */
+        }
+        
+        /* Основний контейнер MDL */
+        .mdl-layout__content {
+            padding: 20px;
+        }
+
+        /* 🦫 .картонна-бобрика (Картка) */
+        .картонна-бобрика {
+            background-color: #1a1a1a;
+            color: var(--frogy-text-color);
+            border-radius: 12px;
+            box-shadow: var(--bobrik-shadow); 
+            transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+            margin-bottom: 20px;
+            height: auto !important; /* Фікс для динамічного контенту */
+        }
+
+        .картонна-бобрика:hover {
+            transform: translateY(-5px); /* Бобрик-Стрибок */
+            box-shadow: 0 15px 30px rgba(0, 128, 128, 0.6); /* Нова бірюзова тінь */
+        }
+
+        /* 🐸 .кнопка-біляш (Кнопка) - Бірюзове Домінування */
+        .кнопка-біляш {
+            background-color: var(--frogy-primary-color) !important; 
+            color: var(--frogy-text-color) !important;
+            font-weight: 700;
+            border-radius: 8px !important;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.2s ease, transform 0.1s ease;
+        }
+        
+        .кнопка-біляш:hover {
+            background-color: var(--frogy-primary-hover) !important; 
+            transform: translateY(-1px);
+        }
+
+        /* Заголовок AppBar - Фірмовий Бірюзовий (Перевизначаємо MDL) */
+        .mdl-layout__header {
+            background-color: var(--frogy-primary-color);
+        }
+
+        .mdl-layout__drawer {
+            background-color: #222;
+            color: var(--frogy-text-color);
+        }
+
+        .mdl-layout-title {
+            font-weight: 700;
+        }
+
+        /* Стиль для FrogyScript-елементів */
+        .bilyash-hud {
+            color: var(--frogy-accent-color);
+            font-size: 2rem;
+            font-weight: 900;
+            text-shadow: 0 0 5px rgba(255, 215, 0, 0.5);
+            text-align: center;
+            margin-bottom: 10px;
+        }
+        
+        /* Стиль для MDL Spinner */
+        .mdl-spinner__layer {
+            /* Спінер використовує Золотий/Жовтий акцент */
+            border-color: var(--frogy-accent-color) !important;
+        }
+
+    </style>
+</head>
+
+<body ng-app="Хаос">
+    <!-- MDL Layout: The Shlappy strikes back -->
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+        
+        <!-- HEADER (Навігаційна панель) -->
+        <header class="mdl-layout__header">
+            <div class="mdl-layout__header-row">
+                <!-- Title -->
+                <span class="mdl-layout-title">🐸 FrogyCSS 3: The Shlappy Strikes Back</span>
+                <!-- Spacer для адаптивності -->
+                <div class="mdl-layout-spacer"></div>
+                <!-- Desktop Navigation (тільки для великих екранів) -->
+                <nav class="mdl-navigation mdl-layout--large-screen-only">
+                    <a class="mdl-navigation__link" href="#components">Компоненти V.3</a>
+                    <a class="mdl-navigation__link" href="#chaos">Лічильник Біляшів</a>
+                    <a class="mdl-navigation__link" href="#license">UNLICENSE</a>
+                </nav>
+            </div>
+        </header>
+
+        <!-- DRAWER (Бічна панель) -->
+        <div class="mdl-layout__drawer">
+            <span class="mdl-layout-title">Меню Хаосу</span>
+            <nav class="mdl-navigation">
+                <a class="mdl-navigation__link" href="#main"><i class="material-icons">home</i> Головна Епопея</a>
+                <a class="mdl-navigation__link" href="#components"><i class="material-icons">widgets</i> Компоненти V.3</a>
+                <a class="mdl-navigation__link" href="#chaos"><i class="material-icons">flash_on</i> Frogy Хаос Демо</a>
+                <a class="mdl-navigation__link" href="#license"><i class="material-icons">info</i> Юридичний Хаос</a>
+            </nav>
+        </div>
+
+        <!-- CONTENT (Основний вміст) -->
+        <main class="mdl-layout__content">
+            <div class="page-content">
+                
+                <!-- Секція 1: Привітання та Філософія -->
+                <div class="mdl-grid" id="main">
+                    <div class="mdl-cell mdl-cell--12-col">
+                        <h1 style="color: var(--frogy-primary-color); font-size: 2.5rem; border-bottom: 2px solid var(--frogy-accent-color);">
+                            FrogyCSS 3: Віртуальна Епопея Хаосу
+                        </h1>
+                        <p>Цей сайт — демонстрація філософії **Controlled Chaos** та стилів **FrogyCSS V.3**. Ми відроджуємо швидкий та чистий Material Design Lite (MDL Revival) і перетворюємо його на справжній бірюзово-жовтий шедевр з меметизованими компонентами Шляпного Архітектора!</p>
+                    </div>
+                </div>
+
+                <!-- Секція 2: Компоненти FrogyCSS V.3 -->
+                <h2 id="components" style="margin-top: 30px; color: var(--frogy-text-color); border-bottom: 1px solid #333;">Основні Компоненти FrogyCSS V.3</h2>
+                
+                <div class="mdl-grid">
+                    
+                    <!-- 2.1: Картка Бобра (.картонна-бобрика) -->
+                    <div class="mdl-cell mdl-cell--6-col mdl-cell--4-col-tablet mdl-cell--12-col-phone">
+                        <div class="картонна-бобрика mdl-card mdl-shadow--2dp" style="min-height: 250px;">
+                            <div class="mdl-card__title">
+                                <h2 class="mdl-card__title-text">🦫 Картка Бобра (.картонна-бобрика)</h2>
+                            </div>
+                            <div class="mdl-card__supporting-text">
+                                Наведіть курсор на цю картку! Вона демонструє наш фірмовий **Бобрик-Стрибок** (`transform: translateY(-5px);`) та бірюзовий тінь-хаос. Це MDL-картка, якій додали душу.
+                                <p class="bilyash-hud" style="font-size: 1.5rem;">Бобрик-Стрибок Активний</p>
+                            </div>
+                            <div class="mdl-card__actions mdl-card--border">
+                                <button class="кнопка-біляш mdl-button mdl-js-button mdl-js-ripple-effect">
+                                    Ква-Ква!
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 2.2: Кнопка Біляш (.кнопка-біляш) -->
+                    <div class="mdl-cell mdl-cell--6-col mdl-cell--4-col-tablet mdl-cell--12-col-phone">
+                        <div class="картонна-бобрика mdl-card mdl-shadow--2dp" style="min-height: 250px;">
+                            <div class="mdl-card__title">
+                                <h2 class="mdl-card__title-text">🐸 Бірюзова Кнопка Біляш (.кнопка-біляш)</h2>
+                            </div>
+                            <div class="mdl-card__supporting-text">
+                                Використовує клас `.кнопка-біляш` для перевизначення стандартного кольору MDL на наш фірмовий **Бірюзовий Хаос** (`#008080`) та забезпечує м'яку анімацію натискання.
+                                <div style="margin-top: 20px;">
+                                    <button class="кнопка-біляш mdl-button mdl-button--raised mdl-js-button mdl-js-ripple-effect">
+                                        Піднести Біляш
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="mdl-card__actions mdl-card--border">
+                                <!-- Порожні дії для естетики MDL -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 2.3: Поле Введення MDL -->
+                    <div class="mdl-cell mdl-cell--12-col">
+                        <div class="картонна-бобрика mdl-card mdl-shadow--2dp">
+                            <div class="mdl-card__supporting-text">
+                                <h2 style="color: var(--frogy-primary-color); font-size: 1.2rem;">Інтеграція MDL-елементів</h2>
+                                <p>Завдяки новому Green-Yellow MDL, кольори фокусу тут будуть зеленими/жовтими.</p>
+                                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style="width: 100%;">
+                                    <input class="mdl-textfield__input" type="text" id="sample3" value="FrogyCSS V.3 - це Хаос!">
+                                    <label class="mdl-textfield__label" for="sample3">Ваша Мем-Команда...</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div> <!-- End MDL Grid -->
+                
+                <!-- Секція 3: Frogy Хаос (AngularJS Demo) -->
+                <h2 id="chaos" style="margin-top: 30px; color: var(--frogy-text-color); border-bottom: 1px solid #333;">💥 Frogy Хаос: Лічильник Біляшів (FrogyScript Logic)</h2>
+                
+                <div class="mdl-grid">
+                    <div class="mdl-cell mdl-cell--12-col mdl-cell--8-col-tablet mdl-cell--4-col-phone" ng-controller="ЛічильникБіляшів">
+                         <div class="картонна-бобрика mdl-card mdl-shadow--4dp">
+                            <div class="mdl-card__title">
+                                <h2 class="mdl-card__title-text" style="color: var(--frogy-accent-color);">Епопея Біляшів (AngularJS)</h2>
+                            </div>
+                            <div class="mdl-card__supporting-text">
+                                <p>Поточна кількість Біляшів у Віртуальній Епопеї:</p>
+                                <div class="bilyash-hud">{{ кількість_біляшів }}</div>
+
+                                <!-- Демонстрація MDL Spinner (.bug-спінер) -->
+                                <div ng-show="завантаження_хаосу" style="text-align: center; margin-bottom: 15px;">
+                                    <p style="color: #bbb;">Завантаження Мему-Команди... (Це наш .bug-спінер)</p>
+                                    <div class="mdl-spinner mdl-spinner--single-color mdl-js-spinner is-active"></div>
+                                </div>
+
+                                <div style="display: flex; justify-content: space-around; flex-wrap: wrap;">
+                                    <button 
+                                        class="кнопка-біляш mdl-button mdl-button--raised mdl-js-button mdl-js-ripple-effect"
+                                        ng-click="додатиБіляш(10)"
+                                        ng-disabled="завантаження_хаосу"
+                                        style="margin: 5px;"
+                                    >
+                                        Додати +10 Хаосу
+                                    </button>
+                                    <button 
+                                        class="кнопка-біляш mdl-button mdl-button--raised mdl-js-button mdl-js-ripple-effect"
+                                        ng-click="скинутиБіляші()"
+                                        ng-disabled="завантаження_хаосу"
+                                        style="margin: 5px;"
+                                    >
+                                        Скинути до початкового Хаосу
+                                    </button>
+                                </div>
+                                <p style="font-size: 0.8rem; margin-top: 15px; color: #aaa;">*FrogyScript використовує AngularJS (ng-click) для керування станом.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Секція 4: Ліцензія UNLICENSE -->
+                <h2 id="license" style="margin-top: 30px; color: var(--frogy-text-color); border-bottom: 1px solid #333;">Юридичний Хаос: UNLICENSE</h2>
+                <div class="mdl-grid">
+                    <div class="mdl-cell mdl-cell--12-col">
+                        <p>FrogyCSS 3 поширюється під ліцензією **UNLICENSE**. Це означає: **Робіть, що хочете!** (Як і годиться справжньому Хаосу).</p>
+                        <blockquote style="border-left: 4px solid var(--frogy-accent-color); padding-left: 15px; margin-left: 0; color: #aaa;">
+                            <p>This is free and unencumbered software released into the public domain. Anyone is free to copy, modify, publish, use, compile, sell, or distribute this software, for any purpose, commercial or non-commercial, and by any means.</p>
+                        </blockquote>
+                        <p>Жодних вимог, жодних юридичних зобов'язань. Насолоджуйтесь Хаосом і додайте більше **div-shlyapa** у ваш код!</p>
+                    </div>
+                </div>
+
+                <!-- Footer (MDL-стиль) -->
+                <footer class="mdl-mini-footer" style="margin-top: 50px; background-color: #1a1a1a; color: #888;">
+                    <div class="mdl-mini-footer__left-section">
+                        <div class="mdl-logo">FrogyCSS 3: The Shlappy Strikes Back © 2025</div>
+                        <ul class="mdl-mini-footer__link-list">
+                            <li><a href="https://github.com/theunlicense/unlicense" target="_blank">UNLICENSE</a></li>
+                            <li><a href="https://github.com/FrogyBoberShlappyCode2014" target="_blank">GitHub Хаос (MOCK)</a></li>
+                        </ul>
+                    </div>
+                </footer>
+
+            </div>
+        </main>
+    </div>
+
+    <!-- ============================================= -->
+    <!-- Підключення Скриптів (У Правильному Порядку!) -->
+    <!-- ============================================= -->
+    
+    <!-- 1. AngularJS (ng-Frogy) -->
+    <script src="https://cdn.jsdelivr.net/npm/angular@1.8.2/angular.min.js"></script>
+    
+    <!-- 2. MDL JS (Для динамічних елементів, як drawer та ripple) -->
+    <script src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+    
+    <!-- 3. FrogyScript Core Logic -->
+    <script>
+        /**
+         * 🐸 FrogyScript Core: AngularJS Module
+         * Ініціалізація модуля "Хаос" та контролера "ЛічильникБіляшів"
+         */
+        
+        angular.module('Хаос', [])
+            .controller('ЛічильникБіляшів', function($scope, $timeout) {
+                const initialChaos = 42;
+                $scope.кількість_біляшів = initialChaos;
+                $scope.завантаження_хаосу = true;
+                
+                // Симуляція затримки завантаження (як "Frogy.чекати_на-шапку")
+                $timeout(function() {
+                    $scope.завантаження_хаосу = false;
+                    $scope.кількість_біляшів += 10;
+                }, 3000); 
+
+                $scope.додатиБіляш = function(count = 1) {
+                    if (!$scope.завантаження_хаосу) {
+                        $scope.кількість_біляшів += count;
+                    }
+                };
+                
+                $scope.скинутиБіляші = function() {
+                    if (!$scope.завантаження_хаосу) {
+                        $scope.кількість_біляшів = initialChaos;
+                    }
+                };
+            });
+            
+        // Ініціалізація MDL після завантаження сторінки
+        window.onload = function() {
+            if (typeof componentHandler !== 'undefined') {
+                componentHandler.upgradeDom();
+            }
+        };
+    </script>
+</body>
+</html>
