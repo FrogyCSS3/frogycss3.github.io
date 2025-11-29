@@ -1,17 +1,18 @@
 <!DOCTYPE html>
-<html lang="uk">
-<head>
+<html lang="uk" class="mdl-js"><span id="uas-port" data-str="%7B%22userAgent%22%3A%22Mozilla%2F5.0%20(Windows%20NT%2010.0%3B%20Win64%3B%20x64)%20AppleWebKit%2F537.36%20(KHTML%2C%20like%20Gecko)%20Chrome%2F141.0.7390.55%20Safari%2F537.36%22%2C%22appVersion%22%3A%225.0%20(Windows%20NT%2010.0%3B%20Win64%3B%20x64)%20AppleWebKit%2F537.36%20(KHTML%2C%20like%20Gecko)%20Chrome%2F141.0.7390.55%20Safari%2F537.36%22%2C%22platform%22%3A%22Win32%22%2C%22vendor%22%3A%22Google%20Inc.%22%2C%22product%22%3A%22Gecko%22%2C%22oscpu%22%3A%22%5Bdelete%5D%22%2C%22buildID%22%3A%22%5Bdelete%5D%22%2C%22productSub%22%3A%2220030107%22%2C%22userAgentDataBuilder%22%3A%7B%22p%22%3A%7B%22ua%22%3A%22Mozilla%2F5.0%20(Windows%20NT%2010.0%3B%20Win64%3B%20x64)%20AppleWebKit%2F537.36%20(KHTML%2C%20like%20Gecko)%20Chrome%2F141.0.7390.55%20Safari%2F537.36%22%2C%22browser%22%3A%7B%22name%22%3A%22Chrome%22%2C%22version%22%3A%22141.0.7390.55%22%2C%22major%22%3A%22141%22%7D%2C%22cpu%22%3A%7B%22architecture%22%3A%22amd64%22%7D%2C%22device%22%3A%7B%7D%2C%22engine%22%3A%7B%22name%22%3A%22Blink%22%2C%22version%22%3A%22141.0.7390.55%22%7D%2C%22os%22%3A%7B%22name%22%3A%22Windows%22%2C%22version%22%3A%2210%22%7D%7D%2C%22ua%22%3A%22Mozilla%2F5.0%20(Windows%20NT%2010.0%3B%20Win64%3B%20x64)%20AppleWebKit%2F537.36%20(KHTML%2C%20like%20Gecko)%20Chrome%2F141.0.7390.55%20Safari%2F537.36%22%7D%2C%22type%22%3A%22user%22%7D" data-ready="true" data-type="user"></span><head><style>@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none !important;}ng\:form{display:block;}.ng-animate-shim{visibility:hidden;}.ng-anchor{position:absolute;}</style>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>🐸 FrogyCSS 3: The Shlappy Strikes Back (MDL Revival)</title>
     
     <!-- 1. Підключення шрифтів Material Design (MDL) та Inter -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,400,500,700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,400,500,700&amp;display=swap">
     
     <!-- 2. Підключення Material Design Lite (MDL) - База -->
     <!-- ВИКОРИСТОВУЄМО ЗЕЛЕНО-ЖОВТИЙ АКЦЕНТ MDL з офіційного джерела code.getmdl.io -->
     <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.green-yellow.min.css">
-    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/FrogyBoberShlappyCode2014/frogycss-NG@main/frogy.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/angular@1.8.2/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>    
     <style>
         /* ================================================= */
         /* 🐸 FrogyCSS V.3: MDL-Хаос Стилі (ІНТЕГРОВАНО) */
@@ -107,10 +108,10 @@
 
 <body ng-app="Хаос">
     <!-- MDL Layout: The Shlappy strikes back -->
-    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+    <div class="mdl-layout__container"><div class="mdl-layout mdl-js-layout mdl-layout--fixed-header has-drawer is-upgraded is-small-screen" data-upgraded=",MaterialLayout">
         
         <!-- HEADER (Навігаційна панель) -->
-        <header class="mdl-layout__header">
+        <header class="mdl-layout__header is-casting-shadow"><div aria-expanded="false" role="button" tabindex="0" class="mdl-layout__drawer-button"><i class="material-icons"></i></div>
             <div class="mdl-layout__header-row">
                 <!-- Title -->
                 <span class="mdl-layout-title">🐸 FrogyCSS 3: The Shlappy Strikes Back</span>
@@ -126,7 +127,7 @@
         </header>
 
         <!-- DRAWER (Бічна панель) -->
-        <div class="mdl-layout__drawer">
+        <div class="mdl-layout__drawer" aria-hidden="true">
             <span class="mdl-layout-title">Меню Хаосу</span>
             <nav class="mdl-navigation">
                 <a class="mdl-navigation__link" href="#main"><i class="material-icons">home</i> Головна Епопея</a>
@@ -166,9 +167,9 @@
                                 <p class="bilyash-hud" style="font-size: 1.5rem;">Бобрик-Стрибок Активний</p>
                             </div>
                             <div class="mdl-card__actions mdl-card--border">
-                                <button class="кнопка-біляш mdl-button mdl-js-button mdl-js-ripple-effect">
+                                <button class="кнопка-біляш mdl-button mdl-js-button mdl-js-ripple-effect" data-upgraded=",MaterialButton,MaterialRipple">
                                     Ква-Ква!
-                                </button>
+                                <span class="mdl-button__ripple-container"><span class="mdl-ripple"></span></span></button>
                             </div>
                         </div>
                     </div>
@@ -182,9 +183,9 @@
                             <div class="mdl-card__supporting-text">
                                 Використовує клас `.кнопка-біляш` для перевизначення стандартного кольору MDL на наш фірмовий **Бірюзовий Хаос** (`#008080`) та забезпечує м'яку анімацію натискання.
                                 <div style="margin-top: 20px;">
-                                    <button class="кнопка-біляш mdl-button mdl-button--raised mdl-js-button mdl-js-ripple-effect">
+                                    <button class="кнопка-біляш mdl-button mdl-button--raised mdl-js-button mdl-js-ripple-effect" data-upgraded=",MaterialButton,MaterialRipple">
                                         Піднести Біляш
-                                    </button>
+                                    <span class="mdl-button__ripple-container"><span class="mdl-ripple"></span></span></button>
                                 </div>
                             </div>
                             <div class="mdl-card__actions mdl-card--border">
@@ -199,7 +200,7 @@
                             <div class="mdl-card__supporting-text">
                                 <h2 style="color: var(--frogy-primary-color); font-size: 1.2rem;">Інтеграція MDL-елементів</h2>
                                 <p>Завдяки новому Green-Yellow MDL, кольори фокусу тут будуть зеленими/жовтими.</p>
-                                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style="width: 100%;">
+                                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label is-dirty is-upgraded" style="width: 100%;" data-upgraded=",MaterialTextfield">
                                     <input class="mdl-textfield__input" type="text" id="sample3" value="FrogyCSS V.3 - це Хаос!">
                                     <label class="mdl-textfield__label" for="sample3">Ваша Мем-Команда...</label>
                                 </div>
@@ -213,7 +214,7 @@
                 <h2 id="chaos" style="margin-top: 30px; color: var(--frogy-text-color); border-bottom: 1px solid #333;">💥 Frogy Хаос: Лічильник Біляшів (FrogyScript Logic)</h2>
                 
                 <div class="mdl-grid">
-                    <div class="mdl-cell mdl-cell--12-col mdl-cell--8-col-tablet mdl-cell--4-col-phone" ng-controller="ЛічильникБіляшів">
+                    <div class="mdl-cell mdl-cell--12-col mdl-cell--8-col-tablet mdl-cell--4-col-phone ng-scope" ng-controller="ЛічильникБіляшів">
                          <div class="картонна-бобрика mdl-card mdl-shadow--4dp">
                             <div class="mdl-card__title">
                                 <h2 class="mdl-card__title-text" style="color: var(--frogy-accent-color);">Епопея Біляшів (AngularJS)</h2>
@@ -225,26 +226,16 @@
                                 <!-- Демонстрація MDL Spinner (.bug-спінер) -->
                                 <div ng-show="завантаження_хаосу" style="text-align: center; margin-bottom: 15px;">
                                     <p style="color: #bbb;">Завантаження Мему-Команди... (Це наш .bug-спінер)</p>
-                                    <div class="mdl-spinner mdl-spinner--single-color mdl-js-spinner is-active"></div>
+                                    <div class="mdl-spinner mdl-spinner--single-color mdl-js-spinner is-active is-upgraded" data-upgraded=",MaterialSpinner"><div class="mdl-spinner__layer mdl-spinner__layer-1"><div class="mdl-spinner__circle-clipper mdl-spinner__left"><div class="mdl-spinner__circle"></div></div><div class="mdl-spinner__gap-patch"><div class="mdl-spinner__circle"></div></div><div class="mdl-spinner__circle-clipper mdl-spinner__right"><div class="mdl-spinner__circle"></div></div></div><div class="mdl-spinner__layer mdl-spinner__layer-2"><div class="mdl-spinner__circle-clipper mdl-spinner__left"><div class="mdl-spinner__circle"></div></div><div class="mdl-spinner__gap-patch"><div class="mdl-spinner__circle"></div></div><div class="mdl-spinner__circle-clipper mdl-spinner__right"><div class="mdl-spinner__circle"></div></div></div><div class="mdl-spinner__layer mdl-spinner__layer-3"><div class="mdl-spinner__circle-clipper mdl-spinner__left"><div class="mdl-spinner__circle"></div></div><div class="mdl-spinner__gap-patch"><div class="mdl-spinner__circle"></div></div><div class="mdl-spinner__circle-clipper mdl-spinner__right"><div class="mdl-spinner__circle"></div></div></div><div class="mdl-spinner__layer mdl-spinner__layer-4"><div class="mdl-spinner__circle-clipper mdl-spinner__left"><div class="mdl-spinner__circle"></div></div><div class="mdl-spinner__gap-patch"><div class="mdl-spinner__circle"></div></div><div class="mdl-spinner__circle-clipper mdl-spinner__right"><div class="mdl-spinner__circle"></div></div></div></div>
                                 </div>
 
                                 <div style="display: flex; justify-content: space-around; flex-wrap: wrap;">
-                                    <button 
-                                        class="кнопка-біляш mdl-button mdl-button--raised mdl-js-button mdl-js-ripple-effect"
-                                        ng-click="додатиБіляш(10)"
-                                        ng-disabled="завантаження_хаосу"
-                                        style="margin: 5px;"
-                                    >
+                                    <button class="кнопка-біляш mdl-button mdl-button--raised mdl-js-button mdl-js-ripple-effect" ng-click="додатиБіляш(10)" ng-disabled="завантаження_хаосу" style="margin: 5px;" data-upgraded=",MaterialButton,MaterialRipple">
                                         Додати +10 Хаосу
-                                    </button>
-                                    <button 
-                                        class="кнопка-біляш mdl-button mdl-button--raised mdl-js-button mdl-js-ripple-effect"
-                                        ng-click="скинутиБіляші()"
-                                        ng-disabled="завантаження_хаосу"
-                                        style="margin: 5px;"
-                                    >
+                                    <span class="mdl-button__ripple-container"><span class="mdl-ripple"></span></span></button>
+                                    <button class="кнопка-біляш mdl-button mdl-button--raised mdl-js-button mdl-js-ripple-effect" ng-click="скинутиБіляші()" ng-disabled="завантаження_хаосу" style="margin: 5px;" data-upgraded=",MaterialButton,MaterialRipple">
                                         Скинути до початкового Хаосу
-                                    </button>
+                                    <span class="mdl-button__ripple-container"><span class="mdl-ripple"></span></span></button>
                                 </div>
                                 <p style="font-size: 0.8rem; margin-top: 15px; color: #aaa;">*FrogyScript використовує AngularJS (ng-click) для керування станом.</p>
                             </div>
@@ -278,7 +269,7 @@
 
             </div>
         </main>
-    </div>
+    <div class="mdl-layout__obfuscator"></div></div></div>
 
     <!-- ============================================= -->
     <!-- Підключення Скриптів (У Правильному Порядку!) -->
@@ -329,5 +320,6 @@
             }
         };
     </script>
-</body>
-</html>
+
+
+</body></html>
